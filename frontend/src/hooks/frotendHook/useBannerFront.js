@@ -7,9 +7,7 @@ const useBannerFront = () => {
     const fetchAllBannerFront = async () =>{
         setLoading(true)
         try{
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/banner/public`,{
-                withCredentials: true,
-            });
+            const res = await axios.get(`http://localhost:5000/api/banner/public`);
             setLoading(false)
             setBannerFront(res.data.data)
         }catch(error){
