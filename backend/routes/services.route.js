@@ -19,14 +19,14 @@ ServiceRouter.route('/public')
             .get(getAllServicePublic);
 // 1. Static/Base Routes
 ServiceRouter.route('/')
-  .get(authGuard , restricGuard("admin", "staff"), getAllService)
+  .get(authGuard , restricGuard("admin"), getAllService)
   .post(authGuard ,restricGuard("admin"), uploadServiceFile, createServices);
 
 ServiceRouter.get('/category/:slug', getServiceByCategory);
 
 // 3. ID Routes
 ServiceRouter.route('/:id')
-  .get(authGuard ,restricGuard("admin","staff"), getServiceById)
+  .get(authGuard ,restricGuard("admin"), getServiceById)
   .delete(authGuard ,restricGuard("admin"), deleteServicesById)
   .put(authGuard ,restricGuard("admin"), uploadServiceFile, updateServiceById);
 

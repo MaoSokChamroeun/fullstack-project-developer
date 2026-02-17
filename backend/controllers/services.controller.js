@@ -148,8 +148,6 @@ const getServiceById = async (req, res) => {
 const updateServiceById = async (req, res) => {
   try {
     const { id } = req.params;
-    
-    // ឆែកមើលថាតើ Service មានក្នុង DB ឬអត់
     const existingService = await Service.findById(id);
     if (!existingService) {
       return res.status(404).json({
@@ -158,7 +156,6 @@ const updateServiceById = async (req, res) => {
       });
     }
 
-    // ១. ប្រមូលទិន្នន័យ Title និង Description តាមភាសានីមួយៗពី req.body
     const title = {
       kh: req.body['title.kh'] || existingService.title.kh,
       en: req.body['title.en'] || existingService.title.en,
@@ -171,7 +168,6 @@ const updateServiceById = async (req, res) => {
       ch: req.body['description.ch'] || existingService.description.ch
     };
 
-    // ២. រៀបចំទិន្នន័យសម្រាប់ Update
     const updateData = {
       title: title,
       description: description,

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
 const useCreatePackage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -9,9 +8,9 @@ const useCreatePackage = () => {
     price: "",
     description: "",
   });
-  const [loading, setLoading] = useState(true);
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,8 +31,8 @@ const useCreatePackage = () => {
     data.append("price", formData.price);
     data.append("description", formData.description);
     data.append("image", image);
+
     try {
-      setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.post("http://localhost:5000/api/package", data, {
         headers: {
@@ -44,12 +43,11 @@ const useCreatePackage = () => {
 
       if (res.data.success) {
         setLoading(false);
-        toast.success(res.data.message || "Package Created successfully");
         navigate("/admin/dashboard/package");
       }
     } catch (error) {
       console.error("Upload error", error);
-      toast.error(error.message || "Failed to create package");
+      alert("Failed to create package");
     } finally {
       setLoading(false);
     }

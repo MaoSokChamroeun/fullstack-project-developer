@@ -8,8 +8,7 @@ const postSchema = new mongoose.Schema({
     },
     slug: { 
         type: String, 
-        unique: true, 
-        lowercase: true 
+        lowercase: true,
     },
     content: {
         kh: { type: String, required: true },
@@ -22,10 +21,10 @@ const postSchema = new mongoose.Schema({
     },
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Admin', // Reference to your Admin model
+        ref: 'Admin', 
         required: true
     },
-    tags: [String], // e.g., ['Skincare', 'Massage', 'Promotion']
+    tags: [String],
     isPublished: {
         type: Boolean,
         default: false

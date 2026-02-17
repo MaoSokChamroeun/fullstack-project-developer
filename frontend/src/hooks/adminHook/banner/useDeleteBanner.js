@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { toast } from "react-toastify";
 
 const useDeleteBanner = () => {
   const [loading, setLoading] = useState(false);
@@ -12,12 +11,12 @@ const useDeleteBanner = () => {
       setLoading(true);
       const res = await axios.delete(`http://localhost:5000/api/banner/${id}`);
       if (res.data.success) {
-        toast.success(res.data.message || "Deleted successfully");
+        alert("Deleted successfully");
         if (callback) callback(); 
       }
     } catch (error) {
       console.error("Delete error", error);
-      toast.error(error.message || "Failed to delete banner");
+      alert("Failed to delete banner");
     } finally {
       setLoading(false);
     }

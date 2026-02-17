@@ -24,16 +24,13 @@ app.use(
   })
 );
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(limiter)
-// app.use(cors({
-//     origin: 'http://localhost:5173', // Must match your Vite URL exactly
-//     credentials: true,               // Allows cookies to be sent
-// }));
 app.use(cors({
-  origin: process.env.CLIENT_URL,
-  credentials: true,
+    origin: 'http://localhost:5173', // Must match your Vite URL exactly
+    credentials: true,               // Allows cookies to be sent
 }));
 
 app.use(morgan("dev"))
@@ -44,7 +41,7 @@ const ServiceRouter = require('./routes/services.route');
 const BookingRouter = require('./routes/booking.route');
 const CategoryRouter = require('./routes/category.route');
 const BannerRouter = require('./routes/banner.route');
-const { authGuard } = require('./guard/authGuard.guard');
+const postRouter = require('./routes/post.route');
 
 // 4. Connect to Database
 db();
@@ -64,6 +61,7 @@ app.use('/api/booking', BookingRouter)
 app.use('/api/category', CategoryRouter)
 app.use('/api/services' , ServiceRouter)
 app.use('/api/banner', BannerRouter)
+app.use('/api/post', postRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

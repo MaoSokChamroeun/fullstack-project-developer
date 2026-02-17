@@ -7,7 +7,7 @@ const useBannerFront = () => {
     const fetchAllBannerFront = async () =>{
         setLoading(true)
         try{
-            const res = await axios.get(`http://localhost:5000/api/banner/public`);
+            const res = await axios.get('http://localhost:5000/api/banner/public');
             setLoading(false)
             setBannerFront(res.data.data)
         }catch(error){

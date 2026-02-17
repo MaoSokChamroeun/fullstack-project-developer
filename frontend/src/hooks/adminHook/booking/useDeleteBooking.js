@@ -1,11 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
-import { toast } from "react-toastify";
+
 const useDeleteBooking = () => {
   const [loading, setLoading] = useState(false);
+
+  // Pass the ID and a callback function (like getAllPackage) to refresh the UI
   const deleteBooking = async (id, callback) => {
+    // 1. Ask for confirmation FIRST
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
     if (!confirmDelete) return;
+
     try {
       setLoading(true);
       const token = sessionStorage.getItem("token")
@@ -14,8 +18,9 @@ const useDeleteBooking = () => {
           Authorization : `Bearer ${token}`
         }
       });
+
       if (res.data.seccess || res.data.success) {
-        toast.success(res.data.message || "Deleted successfully!");
+        alert("Deleted successfully");
         if (callback) callback(); 
       }
     } catch (error) {

@@ -16,7 +16,7 @@ const CategoryRouter = express.Router();
 CategoryRouter.route("/public").get(getPublicCategories);
 
 CategoryRouter.route("/")
-  .get(authGuard, restricGuard("admin", "staff"), getAllCategory)
+  .get(authGuard, restricGuard("admin"), getAllCategory)
   .post(authGuard, restricGuard("admin"), createCategory);
 
 CategoryRouter.route("/:id")

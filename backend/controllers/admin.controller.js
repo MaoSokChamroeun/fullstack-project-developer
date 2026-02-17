@@ -31,7 +31,9 @@ const adminLogin = async (req, res, next) => {
       secure: process.env.NODE_ENV == 'production' ? true : false,
       httpOnly: true,
       maxAge: process.env.COOKIE_EXPIER * 24 * 60 * 60 * 1000,
-      sameSite: 'Lax'
+      sameSite: 'Lax',
+      
+
     })
     res.status(200).json({
       success: true,

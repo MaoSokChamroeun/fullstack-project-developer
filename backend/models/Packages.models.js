@@ -1,21 +1,23 @@
 const mongoose = require('mongoose');
 
 const packageSchema = new mongoose.Schema({
-    package_name : {
-        type : String,
+    package_name: {
+        type: String,
+        required: true
     },
-    price : {
-        type : Number
+    total_price: {
+        type: Number,
+        required: true
     },
-    image : {
-        type : String
+    description: {
+        type: String,
+        required: [true, 'Description is required']
     },
-    description : {
-        type : String,
-        required : [true , 'description are required']
-    }
-})
+    services: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Service' 
+    }]
+}, { timestamps: true });
 
-const Packgae = mongoose.model('Package' , packageSchema);
-
-module.exports = Packgae
+const Package = mongoose.model('Package', packageSchema);
+module.exports = Package;

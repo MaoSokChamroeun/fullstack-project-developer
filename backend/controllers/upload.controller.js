@@ -45,6 +45,21 @@ const uploadBanner = multer({
   limits: { fileSize: 1024 * 1024 * 5 },
 })
 
+const uploadPost = multer({
+  storage : createStorage("posts"),
+  fileFilter,
+  limits: { fileSize: 1024 * 1024 * 5 },
+})
+
+const uploadPostFile = (req, res, next) => {
+  uploadPost.single("image")(req, res, (err) => {
+    if (err) return res.status(400).json({ message: err.message });
+    if (!req.file)
+      return res.status(400).json({ message: "Please select a service image" });
+    next();
+  });
+};
+
 const uploadServiceFile = (req, res, next) => {
   uploadService.single("image")(req, res, (err) => {
     if (err) return res.status(400).json({ message: err.message });
@@ -71,4 +86,4 @@ const uploadBannerFile = (req, res, next) => {
   });
 };
 
-module.exports = { uploadServiceFile, uploadPackageFile, uploadBannerFile };
+module.exports = {uploadPostFile , uploadServiceFile, uploadPackageFile, uploadBannerFile };
