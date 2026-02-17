@@ -1,0 +1,33 @@
+[33m057891c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m057891c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: commit: first commit
+[33m1eb0f31[m HEAD@{2}: commit: first commit
+[33md69ff8e[m HEAD@{3}: checkout: moving from main to main
+[33md69ff8e[m HEAD@{4}: commit: push somting
+[33m2f13afd[m HEAD@{5}: commit: Update code
+[33mfcaa319[m HEAD@{6}: Branch: renamed refs/heads/main to refs/heads/main
+[33mfcaa319[m HEAD@{8}: commit: first commit
+[33m1fbc3c8[m HEAD@{9}: commit: update booking
+[33m6540e9b[m HEAD@{10}: commit: udpate
+[33m25c4286[m HEAD@{11}: commit: udpate
+[33m31968cf[m HEAD@{12}: commit: Update db
+[33ma4fc1a9[m HEAD@{13}: commit: Update db
+[33mdb98dc7[m HEAD@{14}: commit: Update db
+[33m0c36937[m HEAD@{15}: commit: Fix CORS for Render deployment
+[33m39ec897[m HEAD@{16}: commit: Fix CORS for Render deployment
+[33m981d40f[m HEAD@{17}: Branch: renamed refs/heads/main to refs/heads/main
+[33m981d40f[m HEAD@{19}: Branch: renamed refs/heads/main to refs/heads/main
+[33m981d40f[m HEAD@{21}: Branch: renamed refs/heads/main to refs/heads/main
+[33m981d40f[m HEAD@{23}: commit: project completed
+[33mcb97c58[m HEAD@{24}: commit: fix
+[33m9335eed[m HEAD@{25}: commit: update
+[33mba208b4[m HEAD@{26}: commit: Fix
+[33m6997c06[m HEAD@{27}: commit: Fix
+[33m99f53eb[m HEAD@{28}: commit: Update sompage
+[33m122d031[m HEAD@{29}: commit: Update backend coe
+[33me3c1ff4[m HEAD@{30}: commit: add dependencis
+[33m291a30e[m HEAD@{31}: Branch: renamed refs/heads/main to refs/heads/main
+[33m291a30e[m HEAD@{33}: commit: first commit
+[33mf47f41c[m HEAD@{34}: Branch: renamed refs/heads/main to refs/heads/main
+[33mf47f41c[m HEAD@{36}: commit: initial commit: spa project with multilingual support
+[33mfc46173[m HEAD@{37}: Branch: renamed refs/heads/master to refs/heads/main
+[33mfc46173[m HEAD@{39}: commit (initial): initial commit: spa project with multilingual support
